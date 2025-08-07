@@ -45,8 +45,6 @@ services:
     volumes:
       - ./data/letsencrypt:/etc/letsencrypt
       - ./data/certbot-webroot:/var/www/certbot
-    entrypoint: /bin/sh
-    # 인증서 발급/갱신용 명령 수동 실행
 
 volumes:
   letsencrypt:
