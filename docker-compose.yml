@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  nginx-naxsi-fail2ban:
+    build:
+      context: ./nginx-naxsi-fail2ban
+      dockerfile: Dockerfile
+    container_name: nginx-naxsi-fail2ban
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx-naxsi-fail2ban/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx-naxsi-fail2ban/nginx/naxsi_core.rules:/etc/nginx/naxsi_core.rules:ro
+      - ./nginx-naxsi-fail2ban/nginx/naxsi_whitelist.rules:/etc/nginx/naxsi_whitelist.rules:ro
+      - ./nginx-naxsi-fail2ban/nginx/naxsi.rules:/etc/nginx/naxsi.rules:ro
+      - ./nginx-naxsi-fail2ban/fail2ban/jail.local:/etc/fail2ban/jail.local:ro
+      - ./nginx-naxsi-fail2ban/fail2ban/filter.d:/etc/fail2ban/filter.d:ro
+      - ./logs/nginx:/var/log/nginx
+      - ./logs/fail2ban:/var/log/fail2ban
+      - ./data/letsencrypt:/etc/letsencrypt
+      - ./data/certbot-webroot:/var/www/certbot
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    depends_on:
+      - nextjs-app
+      - certbot
+
+  nextjs-app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: nextjs-app
+    restart: always
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./data/letsencrypt:/etc/letsencrypt
+      - ./data/certbot-webroot:/var/www/certbot
+    entrypoint: /bin/sh
+    # 인증서 발급/갱신용 명령 수동 실행
+
+volumes:
+  letsencrypt:
+  certbot-webroot:

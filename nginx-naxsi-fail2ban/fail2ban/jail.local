@@ -1,0 +1,31 @@
+[sshd]
+enabled = false
+
+[nginx-scanner-block]
+enabled = true
+filter = nginx-scanner-block
+action = iptables[name=NGINX-MALICIOUS, port=https, protocol=tcp]
+port = http,https
+logpath = /var/log/nginx/https_access.log
+maxretry = 3
+findtime = 1h
+bantime = 1w
+backend = auto
+
+[nginx-botsearch]
+enabled = true
+filter = nginx-botsearch
+port    = http,https
+logpath = /var/log/nginx/https_access.log
+maxretry = 3
+findtime = 1h
+bantime = 24h
+
+[nginx-http-auth]
+enabled = true
+filter = nginx-http-auth
+port    = http,https
+logpath = /var/log/nginx/error.log
+maxretry = 3
+findtime = 1h
+bantime = 24h
