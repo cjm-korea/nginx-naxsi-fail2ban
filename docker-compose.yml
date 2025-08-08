@@ -30,8 +30,10 @@ services:
 
   nextjs-app:
     build:
-      context: ./app
+      context: ./betheone-plm
       dockerfile: Dockerfile
+    env_file:
+      - ./betheone-plm/.env.production
     container_name: nextjs-app
     restart: always
     expose:
