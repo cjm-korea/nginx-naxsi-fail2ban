@@ -1,0 +1,60 @@
+2025-08-08 15:10:27,038 fail2ban.configreader   [7]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+2025-08-08 15:10:27,039 fail2ban.configreader   [7]: ERROR   Found no accessible config files for 'filter.d/nginx-http-auth' under /etc/fail2ban
+2025-08-08 15:10:27,040 fail2ban.jailreader     [7]: ERROR   Unable to read the filter 'nginx-http-auth'
+2025-08-08 15:10:27,040 fail2ban.jailsreader    [7]: ERROR   Errors in jail 'nginx-http-auth'. Skipping...
+2025-08-08 15:10:27,041 fail2ban.configreader   [7]: ERROR   Found no accessible config files for 'filter.d/nginx-botsearch' under /etc/fail2ban
+2025-08-08 15:10:27,041 fail2ban.jailreader     [7]: ERROR   Unable to read the filter 'nginx-botsearch'
+2025-08-08 15:10:27,041 fail2ban.jailsreader    [7]: ERROR   Errors in jail 'nginx-botsearch'. Skipping...
+2025-08-08 15:10:27,049 fail2ban                [7]: ERROR   Failed during configuration: Have not found any log file for nginx-scanner-block jail
+2025-08-08 15:10:27,049 fail2ban                [7]: ERROR   Async configuration of server failed
+2025-08-08 15:10:28,167 fail2ban.configreader   [11]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+2025-08-08 15:10:28,168 fail2ban.configreader   [11]: ERROR   Found no accessible config files for 'filter.d/nginx-http-auth' under /etc/fail2ban
+2025-08-08 15:10:28,168 fail2ban.jailreader     [11]: ERROR   Unable to read the filter 'nginx-http-auth'
+2025-08-08 15:10:28,169 fail2ban.jailsreader    [11]: ERROR   Errors in jail 'nginx-http-auth'. Skipping...
+2025-08-08 15:10:28,170 fail2ban.configreader   [11]: ERROR   Found no accessible config files for 'filter.d/nginx-botsearch' under /etc/fail2ban
+2025-08-08 15:10:28,170 fail2ban.jailreader     [11]: ERROR   Unable to read the filter 'nginx-botsearch'
+2025-08-08 15:10:28,170 fail2ban.jailsreader    [11]: ERROR   Errors in jail 'nginx-botsearch'. Skipping...
+2025-08-08 15:10:28,178 fail2ban                [11]: ERROR   Failed during configuration: Have not found any log file for nginx-scanner-block jail
+2025-08-08 15:10:28,184 fail2ban                [11]: ERROR   Async configuration of server failed
+2025-08-08 15:10:30,332 fail2ban.configreader   [13]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+2025-08-08 15:10:30,334 fail2ban.configreader   [13]: ERROR   Found no accessible config files for 'filter.d/nginx-http-auth' under /etc/fail2ban
+2025-08-08 15:10:30,334 fail2ban.jailreader     [13]: ERROR   Unable to read the filter 'nginx-http-auth'
+2025-08-08 15:10:30,334 fail2ban.jailsreader    [13]: ERROR   Errors in jail 'nginx-http-auth'. Skipping...
+2025-08-08 15:10:30,335 fail2ban.configreader   [13]: ERROR   Found no accessible config files for 'filter.d/nginx-botsearch' under /etc/fail2ban
+2025-08-08 15:10:30,335 fail2ban.jailreader     [13]: ERROR   Unable to read the filter 'nginx-botsearch'
+2025-08-08 15:10:30,335 fail2ban.jailsreader    [13]: ERROR   Errors in jail 'nginx-botsearch'. Skipping...
+2025-08-08 15:10:30,343 fail2ban                [13]: ERROR   Failed during configuration: Have not found any log file for nginx-scanner-block jail
+2025-08-08 15:10:30,344 fail2ban                [13]: ERROR   Async configuration of server failed
+2025-08-08 15:10:33,493 fail2ban.configreader   [15]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+2025-08-08 15:10:33,495 fail2ban.configreader   [15]: ERROR   Found no accessible config files for 'filter.d/nginx-http-auth' under /etc/fail2ban
+2025-08-08 15:10:33,495 fail2ban.jailreader     [15]: ERROR   Unable to read the filter 'nginx-http-auth'
+2025-08-08 15:10:33,495 fail2ban.jailsreader    [15]: ERROR   Errors in jail 'nginx-http-auth'. Skipping...
+2025-08-08 15:10:33,496 fail2ban.configreader   [15]: ERROR   Found no accessible config files for 'filter.d/nginx-botsearch' under /etc/fail2ban
+2025-08-08 15:10:33,496 fail2ban.jailreader     [15]: ERROR   Unable to read the filter 'nginx-botsearch'
+2025-08-08 15:10:33,496 fail2ban.jailsreader    [15]: ERROR   Errors in jail 'nginx-botsearch'. Skipping...
+2025-08-08 15:10:33,504 fail2ban                [15]: ERROR   Failed during configuration: Have not found any log file for nginx-scanner-block jail
+2025-08-08 15:10:33,506 fail2ban                [15]: ERROR   Async configuration of server failed
+2025-08-08 15:21:30,269 fail2ban.configreader   [7]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+2025-08-08 15:21:30,280 fail2ban                [7]: ERROR   Failed during configuration: Have not found any log file for nginx-botsearch jail
+2025-08-08 15:21:30,282 fail2ban                [7]: ERROR   Async configuration of server failed
+2025-08-08 15:21:31,427 fail2ban.configreader   [11]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+2025-08-08 15:21:31,437 fail2ban                [11]: ERROR   Failed during configuration: Have not found any log file for nginx-botsearch jail
+2025-08-08 15:21:31,439 fail2ban                [11]: ERROR   Async configuration of server failed
+2025-08-08 15:21:33,558 fail2ban.configreader   [13]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+2025-08-08 15:21:33,569 fail2ban                [13]: ERROR   Failed during configuration: Have not found any log file for nginx-botsearch jail
+2025-08-08 15:21:33,571 fail2ban                [13]: ERROR   Async configuration of server failed
+2025-08-08 15:21:36,720 fail2ban.configreader   [15]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+2025-08-08 15:21:36,731 fail2ban                [15]: ERROR   Failed during configuration: Have not found any log file for nginx-botsearch jail
+2025-08-08 15:21:36,732 fail2ban                [15]: ERROR   Async configuration of server failed
+2025-08-08 15:27:48,596 fail2ban.configreader   [7]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+2025-08-08 15:27:48,607 fail2ban                [7]: ERROR   Failed during configuration: Have not found any log file for nginx-botsearch jail
+2025-08-08 15:27:48,609 fail2ban                [7]: ERROR   Async configuration of server failed
+2025-08-08 15:27:49,722 fail2ban.configreader   [11]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+2025-08-08 15:27:49,734 fail2ban                [11]: ERROR   Failed during configuration: Have not found any log file for nginx-botsearch jail
+2025-08-08 15:27:49,734 fail2ban                [11]: ERROR   Async configuration of server failed
+2025-08-08 15:27:51,846 fail2ban.configreader   [13]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+2025-08-08 15:27:51,857 fail2ban                [13]: ERROR   Failed during configuration: Have not found any log file for nginx-botsearch jail
+2025-08-08 15:27:51,858 fail2ban                [13]: ERROR   Async configuration of server failed
+2025-08-08 15:27:54,970 fail2ban.configreader   [15]: WARNING 'allowipv6' not defined in 'Definition'. Using default one: 'auto'
+2025-08-08 15:27:54,981 fail2ban                [15]: ERROR   Failed during configuration: Have not found any log file for nginx-botsearch jail
+2025-08-08 15:27:54,983 fail2ban                [15]: ERROR   Async configuration of server failed

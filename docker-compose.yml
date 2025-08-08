@@ -16,7 +16,7 @@ services:
       - ./nginx-naxsi-fail2ban/nginx/naxsi_whitelist.rules:/etc/nginx/naxsi_whitelist.rules:ro
       - ./nginx-naxsi-fail2ban/nginx/naxsi.rules:/etc/nginx/naxsi.rules:ro
       - ./nginx-naxsi-fail2ban/fail2ban/jail.local:/etc/fail2ban/jail.local:ro
-      - ./nginx-naxsi-fail2ban/fail2ban/filter.d:/etc/fail2ban/filter.d:ro
+      - ./nginx-naxsi-fail2ban/fail2ban/filter.d/nginx-scanner-block.conf:/etc/fail2ban/filter.d/nginx-scanner-block.conf:ro
       - ./logs/nginx:/var/log/nginx
       - ./logs/fail2ban:/var/log/fail2ban
       - ./data/letsencrypt:/etc/letsencrypt
