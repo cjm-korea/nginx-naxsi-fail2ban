@@ -1,0 +1,4 @@
+[submodule "betheone-plm"]
+	path = betheone-plm
+	url = git@github.com:cjm-korea/betheone-plm.git
+	branch = main
