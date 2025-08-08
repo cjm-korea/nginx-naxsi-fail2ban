@@ -26,7 +26,6 @@ services:
       - NET_RAW
     depends_on:
       - nextjs-app
-      - certbot
 
   nextjs-app:
     build:
@@ -47,6 +46,7 @@ services:
     volumes:
       - ./data/letsencrypt:/etc/letsencrypt
       - ./data/certbot-webroot:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew --quiet --post-hook \"docker-compose kill -s HUP nginx-naxsi-fail2ban\"; sleep 24h & wait $$!; done;'"
 
 volumes:
   letsencrypt:
