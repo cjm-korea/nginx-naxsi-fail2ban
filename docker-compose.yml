@@ -28,9 +28,7 @@ services:
       - nextjs-app
 
   nextjs-app:
-    build:
-      context: ./betheone-plm
-      dockerfile: Dockerfile
+    image: korcjm/betheone-plm:2025-08-09
     env_file:
       - ./betheone-plm/.env.production
     container_name: nextjs-app
