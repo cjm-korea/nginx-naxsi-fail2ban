@@ -6,19 +6,19 @@
 ##################################
 ## INTERNAL RULES IDS:1-999     ##
 ##################################
-#@MainRule "msg:weird request, unable to parse" id:1;
-#@MainRule "msg:request too big, stored on disk and not parsed" id:2;
-#@MainRule "msg:invalid hex encoding, null bytes" id:10;
-#@MainRule "msg:unknown content-type" id:11;
-#@MainRule "msg:invalid formatted url" id:12;
-#@MainRule "msg:invalid POST format" id:13;
-#@MainRule "msg:invalid POST boundary" id:14;
-#@MainRule "msg:invalid JSON" id:15;
-#@MainRule "msg:empty POST" id:16;
-#@MainRule "msg:libinjection_sql" id:17;
-#@MainRule "msg:libinjection_xss" id:18;
-#@MainRule "msg:no generic rules" id:19;
-#@MainRule "msg:bad utf8" id:20;
+@MainRule "msg:weird request, unable to parse" id:1;
+@MainRule "msg:request too big, stored on disk and not parsed" id:2;
+@MainRule "msg:invalid hex encoding, null bytes" id:10;
+@MainRule "msg:unknown content-type" id:11;
+@MainRule "msg:invalid formatted url" id:12;
+@MainRule "msg:invalid POST format" id:13;
+@MainRule "msg:invalid POST boundary" id:14;
+@MainRule "msg:invalid JSON" id:15;
+@MainRule "msg:empty POST" id:16;
+@MainRule "msg:libinjection_sql" id:17;
+@MainRule "msg:libinjection_xss" id:18;
+@MainRule "msg:no generic rules" id:19;
+@MainRule "msg:bad utf8" id:20;
 
 
 ##################################
