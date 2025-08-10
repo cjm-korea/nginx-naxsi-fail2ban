@@ -28,7 +28,7 @@ services:
       - nextjs-app
 
   nextjs-app:
-    image: korcjm/betheone-plm:2025-08-09
+    image: korcjm/betheone-plm:latest
     env_file:
       - ./betheone-plm/.env.production
     container_name: nextjs-app
