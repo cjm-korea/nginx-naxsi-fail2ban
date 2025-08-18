@@ -21,6 +21,7 @@ services:
       - ./logs/fail2ban:/var/log/fail2ban
       - ./data/letsencrypt:/etc/letsencrypt
       - ./data/certbot-webroot:/var/www/certbot
+      - ./nginx-naxsi-fail2ban/nginx/naxsi_whitelist.auto.rules:/etc/nginx/naxsi_whitelist.auto.rules:ro
     cap_add:
       - NET_ADMIN
       - NET_RAW
