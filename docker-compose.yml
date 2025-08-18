@@ -12,6 +12,7 @@ services:
       - "443:443"
     volumes:
       - ./nginx-naxsi-fail2ban/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./logs/nginx:/var/log/nginx
       - ./nginx-naxsi-fail2ban/nginx/naxsi_core.rules:/etc/nginx/naxsi_core.rules:ro
       - ./nginx-naxsi-fail2ban/nginx/naxsi_whitelist.rules:/etc/nginx/naxsi_whitelist.rules:ro
       - ./nginx-naxsi-fail2ban/nginx/naxsi.rules:/etc/nginx/naxsi.rules:ro
