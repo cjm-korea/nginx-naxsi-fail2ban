@@ -1,0 +1,11 @@
+BasicRule wl:1100 "mz:$URL:/api/proxy|$ARGS_VAR:url";
+BasicRule wl:1002 "mz:$URL:/api/proxy|$BODY_VAR:access_token";
+BasicRule wl:1100 "mz:$URL:/api/proxy|$BODY_VAR:targetUrl";
+BasicRule wl:1002 "mz:$URL:/api/proxy|$BODY_VAR:Authorization";
+BasicRule wl:1009 "mz:$URL:/api/proxy|$ARGS_VAR:url";
+BasicRule wl:1315 "mz:$URL:/api/proxy|$ARGS_VAR:url";
+BasicRule wl:1101 "mz:$URL:/api/proxy|$BODY_VAR:endpoint";
+BasicRule wl:19 "mz:$URL:/|URL";
+BasicRule wl:1016 "mz:$URL:/api/proxy|$BODY_VAR:color";
+BasicRule wl:1311 "mz:URL";
+BasicRule wl:1310 "mz:URL";
