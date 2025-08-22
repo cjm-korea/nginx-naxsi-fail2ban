@@ -31,7 +31,7 @@ services:
   nextjs-app:
     image: korcjm/betheone-plm:latest
     env_file:
-      - ./betheone-plm/.env.production
+      - /opt/insightone/.env.runtime
     container_name: nextjs-app
     restart: always
     expose:
