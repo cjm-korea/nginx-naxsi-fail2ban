@@ -1,0 +1,19 @@
+구성 요소 개요
+- `Dockerfile`: Alpine 3.19 기반으로 Nginx 1.25.4와 Naxsi 모듈을 직접 빌드하고 Fail2ban·Supervisor를 설치한다. `/usr/bin/supervisord`가 nginx와 fail2ban을 동시에 관리한다.
+- `nginx/nginx.conf`: 
+  - HTTP(80) → HTTPS 리다이렉트 및 ACME 챌린지 처리.
+  - `www.insightone.kr`에 대한 HTTPS 가상 서버에서 Naxsi 룰을 로드하고 `nextjs-app:3000`으로 프록시한다.
+  - `LearningMode`, `SecRulesEnabled`, 주요 공격 카테고리에 대한 `CheckRule` 정의.
+  - 특정 민감 경로 및 파일 패턴을 `403`으로 즉시 차단한다.
+- `naxsi_core.rules`: SQLi/XSS/RFI/디렉터리 트래버설/파일 업로드 등 범용 시그니처를 정의. 화이트리스트는 별도 파일에서 관리(기본은 비어 있음).
+- `fail2ban/jail.local`: 
+  - `nginx-scanner-block`, `nginx-botsearch`, `nginx-http-auth` jail이 HTTPS 액세스/에러 로그 기반으로 동작.
+  - 1시간 내 3회 탐지 시 IP를 24시간~1주일 차단. iptables 액션을 사용하므로 컨테이너 capability 요구.
+- `fail2ban/filter.d/nginx-scanner-block.conf`: 경로 스캐닝, 민감파일 접근, Exchange/OWA 스캔 등 다양한 악성 요청 패턴을 탐지.
+- `supervisord.conf`: Nginx는 `daemon off;`로 전면 실행하고 Fail2ban 서버를 포그라운드 실행하여 Supervisor가 재시작한다.
+
+실행 시 고려사항
+- 컨테이너 실행 시 `cap_add: NET_ADMIN`, `NET_RAW`를 부여해야 Fail2ban이 iptables 차단을 적용할 수 있다.
+- 인증서 경로는 `/etc/letsencrypt/live/www.insightone.kr/`를 기준으로 하므로, Certbot 실행 시 동일한 도메인으로 발급받아야 한다.
+- Naxsi가 러닝 모드(`LearningMode`)로 설정되어 있어 초기에는 로그 기반 튜닝이 가능하며, 필요 시 모드를 해제해 차단 정책으로 전환할 수 있다.
+

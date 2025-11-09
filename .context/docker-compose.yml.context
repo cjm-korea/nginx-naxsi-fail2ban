@@ -1,0 +1,20 @@
+요약
+- `docker-compose.yml`은 `nginx-naxsi-fail2ban`, `nextjs-app`, `certbot` 세 서비스를 묶어 HTTPS 프록시+WAF 환경을 구성한다.
+- 모든 트래픽은 `nginx-naxsi-fail2ban` 컨테이너로 들어와 `nextjs-app:3000`으로 프록시되며, `certbot`은 동일한 웹루트/인증서 볼륨을 공유한다.
+
+핵심 세부 정보
+- `nginx-naxsi-fail2ban`:
+  - 로컬 `nginx-naxsi-fail2ban/Dockerfile`로 빌드하며 Nginx+Naxsi+Fail2ban+Supervisor를 포함한다.
+  - `NET_ADMIN`, `NET_RAW` capability가 필요하고, 80/443 포트를 호스트로 노출한다.
+  - 주요 볼륨: Nginx/Naxsi 설정, Fail2ban 설정/로그, Nginx 로그, Let’s Encrypt 인증서, Certbot 웹루트.
+  - `nextjs-app` 준비 이후 시작하도록 `depends_on` 설정.
+- `nextjs-app`:
+  - `korcjm/betheone-plm:latest` 이미지를 사용하며, `/opt/insightone/.env.runtime` 환경 파일을 주입한다.
+  - 3000 포트를 `expose`만 하여 내부 네트워크에서만 접근하도록 유지한다.
+- `certbot`:
+  - `certbot/certbot` 이미지를 활용하며 인증서/웹루트 볼륨을 공유한다.
+
+공유 볼륨 전략
+- `./data/letsencrypt`와 `./data/certbot-webroot`를 세 컨테이너 간에 공유하여 인증서 발급 및 자동 갱신을 지원한다.
+- `./logs/nginx`, `./logs/fail2ban`을 호스트에 저장해 보안 이벤트 분석을 쉽게 한다.
+
